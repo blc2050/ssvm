@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>वाहन व्यवस्था एवं मार्ग (Transport & Routes) | Shri Saraswati Senior Secondary Vidya Mandir</title>
+  <meta name="description" content="विद्यालय बस व्यवस्था, बस प्रभारी निर्देश, मार्ग व्यवस्था कोऑर्डिनेटर विवरण और ग्रामीण क्षेत्रों के लिए बस रूट शुल्क खोजक।">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Shared Header -->
+  <header id="header">
+    <div class="container header-container">
+      <div class="branding">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="1SSVM Logo 2000x.png" alt="SSVM Mandli Logo" onerror="this.src='SSVM Logo 2000x.jpg'">
+          </a>
+        </div>
+        <div class="branding-text">
+          <span class="school-title">श्री सरस्वती विद्या मंदिर</span>
+          <span class="school-subtitle">मंडली, कल्याणपुर, बालोतरा (राज.)</span>
+        </div>
+      </div>
+      
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">मुख्य पृष्ठ (Home)</a>
+        <a href="about.html" class="nav-link">हमारे बारे में (About)</a>
+        <a href="academics.html" class="nav-link">अकादमिक एवं प्रवेश (Academics)</a>
+        <a href="hostel.html" class="nav-link">छात्रावास (Hostel)</a>
+        <a href="transport.html" class="nav-link">वाहन व्यवस्था (Transport)</a>
+        <a href="achievements.html" class="nav-link">उपलब्धियां (Gallery)</a>
+        <a href="result.html" class="nav-link">परीक्षा परिणाम (Results)</a>
+        <a href="contact.html" class="nav-cta">संपर्क करें (Contact)</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <h1 class="anim-slide-up">वाहन व्यवस्था एवं मार्ग (Transport & Routes)</h1>
+      <div class="page-breadcrumbs">
+        <a href="index.html">मुख्य पृष्ठ</a> &gt; <span>वाहन व्यवस्था</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Network Overview & Coordinators -->
+  <section class="section section-white">
+    <div class="container grid-2" style="align-items: center;">
+      <div>
+        <span class="section-pretitle">सुरक्षित आवागमन</span>
+        <h2 class="section-title">हमारा सुदृढ़ परिवहन नेटवर्क</h2>
+        <p class="hero-desc" style="font-size: 1rem; margin-bottom: 20px;">
+          श्री सरस्वती सीनियर सेकेंडरी विद्या मंदिर ग्रामीण परिवेश में फैले विद्यार्थियों की सुगम पहुँच के लिए एक विशाल परिवहन नेटवर्क संचालित करता है। हमारे बेड़े में 12 से अधिक बड़ी बसें (जैसे: चारभुजा, महादेव, लक्ष्मी, अमरदीप, पवन, शिव आदि) कार्यरत हैं।
+        </p>
+        <p style="color: var(--neutral-text); margin-bottom: 20px;">
+          परिवहन व्यवस्था की संपूर्ण जिम्मेदारी वरिष्ठ बस व्यवस्था कोऑर्डिनेटर्स के सुपुर्द है जो दैनिक समयबद्धता, मार्ग योजना और सुरक्षा की निगरानी करते हैं।
+        </p>
+        
+        <div class="card" style="margin-top: 24px; padding: 20px; border-left: 4px solid var(--primary);">
+          <h4 style="font-size: 1.1rem; color: var(--primary); margin-bottom: 10px;"><i class="fa-solid fa-user-tie"></i> बस व्यवस्था कोऑर्डिनेटर्स (Transport Management)</h4>
+          <ul style="list-style: none; padding-left: 0; font-weight: 600;">
+            <li style="margin-bottom: 8px;"><i class="fa-solid fa-circle-user" style="color: var(--secondary);"></i> प्रताप जी (Pratap Ji)</li>
+            <li><i class="fa-solid fa-circle-user" style="color: var(--secondary);"></i> बाबू लाल चौधरी (Babu Lal Choudhary)</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Seating & Rules Card -->
+      <div class="card" style="border: 1px solid var(--neutral-border); background: var(--neutral-light);">
+        <h3 class="card-title" style="color: var(--secondary-dark);"><i class="fa-solid fa-circle-exclamation"></i> बस सुरक्षा एवं बैठने के नियम</h3>
+        <p class="card-desc">बस में यात्रा के दौरान सुरक्षित और अनुशासित आवागमन हेतु निम्नलिखित नियम लागू हैं:</p>
+        <ul class="rules-list rules-list-danger" style="font-size: 0.9rem;">
+          <li><strong>सीट बैठने की प्राथमिकता:</strong> सर्वप्रथम सभी छात्राएं बैठेंगी। कक्षा 9वीं से 12वीं तक की छात्राएं बस में आगे बैठेंगी। इसके बाद प्राथमिक स्तर के बच्चे बैठेंगे।</li>
+          <li><strong>सीनियर मॉनिटर्स नियुक्ति:</strong> प्रत्येक बस में अनुशासित संचालन के लिए दो वरिष्ठ छात्रों को मॉनिटर नियुक्त किया जाता है जो बस प्रभारी शिक्षक को रिपोर्ट करते हैं।</li>
+          <li><strong>शिक्षक प्रभारी (In-charges):</strong> प्रत्येक बस में शिक्षक प्रभारी की नियुक्ति की जाती है जो सुरक्षा, दैनिक हाजिरी और सेकंड राउंड लोडिंग सुनिश्चित करते हैं।</li>
+          <li><strong>अनुशासन भंग कार्रवाई:</strong> यात्रा के दौरान धक्का-मुक्की, दौड़-भाग या शोर मचाने वाले छात्रों को बस सेवा से वंचित किया जा सकता है।</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Bus Route Search Tool -->
+  <section class="section section-alt" id="route-finder">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pretitle">रूट एवं शुल्क खोजक</span>
+        <h2 class="section-title">अपने गाँव के बस मार्ग एवं शुल्क की जाँच करें</h2>
+        <p class="section-desc">नीचे दिए गए खोज बॉक्स में अपने गाँव या ढाणी का नाम लिखें। आपको बस का नाम और सत्र 2026-27 के लिए देय बस शुल्क तुरंत दिखाई देगा।</p>
+      </div>
+
+      <!-- Search Box -->
+      <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" class="search-input" id="routeSearchInput" onkeyup="filterRoutes()" placeholder="गाँव का नाम लिखें (जैसे: Bagnawas, Bagnasa, Korna)...">
+      </div>
+
+      <!-- Bus Routes Table -->
+      <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
+        <table class="routes-table">
+          <thead>
+            <tr>
+              <th>क्रमांक (S.No.)</th>
+              <th>गाँव का नाम (Village Name)</th>
+              <th>सम्बद्ध बस का नाम (Route Bus Name)</th>
+              <th>वार्षिक बस शुल्क (Annual Transport Fee)</th>
+              <th>मासिक अनुमानित (Approx. Monthly - 10 Months)</th>
+            </tr>
+          </thead>
+          <tbody id="routesTableBody">
+            <!-- Dynamic rows will be rendered here by JS -->
+          </tbody>
+        </table>
+        <div id="no-results-msg" class="route-no-results" style="display: none;">
+          <i class="fa-solid fa-triangle-exclamation" style="font-size: 2rem; color: var(--secondary); display: block; margin-bottom: 12px;"></i>
+          आपके द्वारा खोजा गया गाँव सूची में नहीं मिला। कृपया वर्तनी (spelling) की जाँच करें या कार्यालय में संपर्क करें।
+        </div>
+      </div>
+      <p class="school-subtitle" style="text-align: center; margin-top: 20px; font-weight: 500;">
+        * बस शुल्क का भुगतान किश्तों में स्कूल विकास शुल्क के साथ देय होगा। विस्तृत जानकारी हेतु कार्यालय प्रभारी से मिलें।
+      </p>
+    </div>
+  </section>
+
+  <!-- Shared Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3 style="font-family: var(--font-display); font-weight: 700; color: #fff; margin-bottom: 20px;">श्री सरस्वती विद्या मंदिर</h3>
+        <p class="footer-desc">
+          श्री एम. एल. शिक्षण संस्थान द्वारा संचालित, हमारा विद्यालय छात्रों को अनुशासन, संस्कार और आधुनिक शिक्षा का अनूठा समन्वय प्रदान करता है।
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/ssvmeducation" target="_blank" class="footer-social-link" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="mailto:ssvmorg@gmail.com" class="footer-social-link" aria-label="Email Us"><i class="fa-solid fa-envelope"></i></a>
+          <a href="tel:9413030806" class="footer-social-link" aria-label="Call Us"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>त्वरित लिंक्स</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">हमारे बारे में</a></li>
+          <li><a href="academics.html">प्रवेश एवं शुल्क</a></li>
+          <li><a href="hostel.html">छात्रावास जीवन</a></li>
+          <li><a href="transport.html">वाहन मार्ग</a></li>
+          <li><a href="achievements.html">सत्र उपलब्धियां</a></li>
+          <li><a href="result.html">परीक्षा परिणाम</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>अकादमिक धाराएँ</h3>
+        <ul class="footer-links">
+          <li><a>11वीं-12वीं विज्ञान वर्ग</a></li>
+          <li><a>11वीं-12वीं कला वर्ग</a></li>
+          <li><a>11वीं-12वीं कृषि वर्ग</a></li>
+          <li><a>अंग्रेजी माध्यम (LKG-X)</a></li>
+          <li><a>हिंदी माध्यम (Nursery-XII)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>संपर्क सूत्र (Contact)</h3>
+        <p class="footer-contact-item"><i class="fa-solid fa-location-dot" style="color: var(--secondary);"></i>  मंडली, कल्याणपुर, बालोतरा (राजस्थान) - 344026</p>
+        <p class="footer-contact-item"><i class="fa-solid fa-phone" style="color: var(--secondary);"></i> 9413030806, 8854030806</p>
+        <p class="footer-contact-item"><i class="fa-solid fa-envelope" style="color: var(--secondary);"></i> ssvmorg@gmail.com</p>
+        <p class="footer-contact-item"><i class="fa-solid fa-id-card" style="color: var(--secondary);"></i> RBSE Affiliation Code: 1040470</p>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 श्री सरस्वती उच्च माध्यमिक विद्या मंदिर, मंडली। सर्वाधिकार सुरक्षित।</p>
+      <p>Designed with ❤️ by Antigravity | Hosted on GitHub</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <!-- Load Bus routes data array -->
+  <script src="bus_routes.js"></script>
+  <script>
+    // Populate routes table on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      renderRoutesTable(busRoutes);
+    });
+
+    function renderRoutesTable(data) {
+      const tbody = document.getElementById('routesTableBody');
+      const noResults = document.getElementById('no-results-msg');
+      tbody.innerHTML = '';
+      
+      if (data.length === 0) {
+        noResults.style.display = 'block';
+        return;
+      }
+      
+      noResults.style.display = 'none';
+      
+      data.forEach((route, index) => {
+        const tr = document.createElement('tr');
+        
+        const monthly = route.fee > 0 ? '₹' + Math.round(route.fee / 10).toLocaleString('en-IN') : '-';
+        const annual = route.fee > 0 ? '₹' + route.fee.toLocaleString('en-IN') : 'सम्पर्क करें';
+        
+        tr.innerHTML = `
+          <td>${index + 1}</td>
+          <td><strong>${route.village}</strong></td>
+          <td><span style="display:inline-flex; align-items:center; gap:6px;"><i class="fa-solid fa-bus-simple" style="color: var(--primary); font-size:0.85rem;"></i> ${route.bus}</span></td>
+          <td><strong>${annual}</strong></td>
+          <td><span style="color: var(--neutral-muted); font-size:0.9rem;">${monthly} / माह</span></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Filter bus routes based on search keyword
+    function filterRoutes() {
+      const query = document.getElementById('routeSearchInput').value.trim().toUpperCase();
+      
+      if (!query) {
+        renderRoutesTable(busRoutes);
+        return;
+      }
+      
+      const filtered = busRoutes.filter(route => {
+        return route.village.toUpperCase().includes(query) || route.bus.toUpperCase().includes(query);
+      });
+      
+      renderRoutesTable(filtered);
+    }
+  </script>
+</body>
+</html>

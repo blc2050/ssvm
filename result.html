@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>परीक्षा परिणाम (Board Results) | Shri Saraswati Senior Secondary Vidya Mandir</title>
+  <meta name="description" content="श्री सरस्वती सीनियर सेकेंडरी विद्या मंदिर मंडली का ऑनलाइन बोर्ड परीक्षा परिणाम सत्यापन पोर्टल। रोल नंबर डालकर मार्कशीट देखें।">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Shared Header -->
+  <header id="header">
+    <div class="container header-container">
+      <div class="branding">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="1SSVM Logo 2000x.png" alt="SSVM Mandli Logo" onerror="this.src='SSVM Logo 2000x.jpg'">
+          </a>
+        </div>
+        <div class="branding-text">
+          <span class="school-title">श्री सरस्वती विद्या मंदिर</span>
+          <span class="school-subtitle">मंडली, कल्याणपुर, बालोतरा (राज.)</span>
+        </div>
+      </div>
+      
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">मुख्य पृष्ठ (Home)</a>
+        <a href="about.html" class="nav-link">हमारे बारे में (About)</a>
+        <a href="academics.html" class="nav-link">अकादमिक एवं प्रवेश (Academics)</a>
+        <a href="hostel.html" class="nav-link">छात्रावास (Hostel)</a>
+        <a href="transport.html" class="nav-link">वाहन व्यवस्था (Transport)</a>
+        <a href="achievements.html" class="nav-link">उपलब्धियां (Gallery)</a>
+        <a href="result.html" class="nav-link active">परीक्षा परिणाम (Results)</a>
+        <a href="contact.html" class="nav-cta">संपर्क करें (Contact)</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <h1 class="anim-slide-up">परीक्षा परिणाम पोर्टल (Board Results Portal)</h1>
+      <div class="page-breadcrumbs">
+        <a href="index.html">मुख्य पृष्ठ</a> &gt; <span>परीक्षा परिणाम</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Results Portal Section -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pretitle">परिणाम सत्यापन</span>
+        <h2 class="section-title">बोर्ड परीक्षा परिणाम 2026</h2>
+        <p class="section-desc">माध्यमिक शिक्षा बोर्ड राजस्थान (RBSE) परीक्षा 2026 के मेधावी विद्यार्थियों का परीक्षा परिणाम सत्यापित करने के लिए कृपया नीचे रोल नंबर दर्ज करें।</p>
+      </div>
+
+      <!-- Roll number search form -->
+      <div class="search-container">
+        <form id="result-search-form" onsubmit="searchBoardResult(event)">
+          <i class="fa-solid fa-id-card search-icon"></i>
+          <input type="text" class="search-input" id="roll-number-input" placeholder="रोल नंबर दर्ज करें (जैसे: 10404701)" required autocomplete="off">
+          <button type="submit" class="btn btn-primary" style="position: absolute; right: 6px; top: 6px; padding: 10px 20px; font-size: 0.9rem;">खोजें (Search)</button>
+        </form>
+      </div>
+
+      <!-- Info/Helper Card -->
+      <div id="result-info-card" style="max-width: 600px; margin: 0 auto 40px; padding: 20px; border-radius: var(--border-radius); border: 1px solid var(--neutral-border); background-color: var(--neutral-light); text-align: center;">
+        <h4 style="margin-bottom: 10px; color: var(--primary); font-family: var(--font-display);"><i class="fa-solid fa-circle-info"></i> मेधावी छात्रों के सैंपल रोल नंबर:</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 0.85rem; text-align: left; max-width: 450px; margin: 0 auto;">
+          <div>
+            <strong>कक्षा 10वीं टॉपर्स (Class 10):</strong>
+            <ul style="padding-left: 15px; margin-top: 4px;">
+              <li><a href="#" onclick="fillRoll('10404701')">10404701</a> (केशव व्यास)</li>
+              <li><a href="#" onclick="fillRoll('10404702')">10404702</a> (हितेश सिंह)</li>
+              <li><a href="#" onclick="fillRoll('10404703')">10404703</a> (चन्द्रप्रकाश)</li>
+              <li><a href="#" onclick="fillRoll('10404704')">10404704</a> (जितेन्द्र सुथार)</li>
+            </ul>
+          </div>
+          <div>
+            <strong>कक्षा 12वीं टॉपर्स (Class 12):</strong>
+            <ul style="padding-left: 15px; margin-top: 4px;">
+              <li><a href="#" onclick="fillRoll('12404701')">12404701</a> (दिनेश - कला)</li>
+              <li><a href="#" onclick="fillRoll('12404702')">12404702</a> (सवाई सिंह - कला)</li>
+              <li><a href="#" onclick="fillRoll('12404706')">12404706</a> (ईश्वर सिंह - विज्ञान)</li>
+              <li><a href="#" onclick="fillRoll('12404708')">12404708</a> (पूजा - विज्ञान)</li>
+            </ul>
+          </div>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--neutral-muted); margin-top: 10px;">नोट: अन्य रोल नंबर दर्ज करने पर 'परिणाम विचाराधीन/अनुपलब्ध' प्रदर्शित होगा।</p>
+      </div>
+
+      <!-- Result Not Found Alert -->
+      <div id="no-results-msg" style="display: none; max-width: 600px; margin: 20px auto; padding: 20px; border-radius: var(--border-radius); border: 1px solid #fca5a5; background-color: #fef2f2; color: #991b1b; text-align: center;">
+        <i class="fa-solid fa-triangle-exclamation" style="font-size: 2rem; margin-bottom: 10px;"></i>
+        <h4 style="font-family: var(--font-display);">परिणाम नहीं मिला (Result Not Found)</h4>
+        <p style="font-size: 0.9rem; margin-top: 4px;">दर्ज किया गया रोल नंबर मान्य नहीं है या अभी तक अपलोड नहीं किया गया है। कृपया सही रोल नंबर प्रविष्ट करें।</p>
+      </div>
+
+      <!-- Marksheet Render Container -->
+      <div id="result-display-container" style="display: none;">
+        <div style="text-align: center; margin-bottom: 20px;">
+          <button onclick="window.print()" class="btn btn-primary" id="print-btn">
+            <i class="fa-solid fa-print"></i> अंकतालिका प्रिंट करें (Print Marksheet)
+          </button>
+        </div>
+
+        <div class="marksheet-box" id="marksheet-box">
+          <!-- Watermark Logo -->
+          <img src="1SSVM Logo 2000x.png" alt="SSVM Watermark" class="marksheet-watermark" onerror="this.src='SSVM Logo 2000x.jpg'">
+
+          <div class="marksheet-header-top">
+            <h3 style="font-family: var(--font-hindi); font-weight: 700; color: var(--primary-dark); font-size: 1.6rem; line-height: 1.3;">
+              श्री सरस्वती सीनियर सेकेंडरी विद्या मंदिर
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--neutral-muted); margin-bottom: 8px;">
+              मंडली, कल्याणपुर, बालोतरा (राजस्थान) - 344026
+            </p>
+            <div style="background-color: var(--primary-dark); color: #fff; padding: 4px 12px; display: inline-block; font-size: 0.8rem; font-weight: 700; border-radius: 4px; text-transform: uppercase;">
+              राजस्थान माध्यमिक शिक्षा बोर्ड परीक्षा परिणाम - 2026
+            </div>
+            <p style="font-size: 0.95rem; font-weight: 700; margin-top: 8px; text-decoration: underline;" id="marksheet-exam-name">
+              SECONDARY SCHOOL EXAMINATION - 2026
+            </p>
+          </div>
+
+          <!-- Student Meta Details -->
+          <div class="marksheet-student-details">
+            <div class="marksheet-details-item">
+              <span>अनुक्रमांक (Roll No.):</span>
+              <span id="lbl-roll">10404701</span>
+            </div>
+            <div class="marksheet-details-item">
+              <span>नामांकन (Enroll. No.):</span>
+              <span id="lbl-enroll">SSVM/26/104701</span>
+            </div>
+            <div class="marksheet-details-item">
+              <span>विद्यार्थी का नाम:</span>
+              <span id="lbl-name">केशव व्यास</span>
+            </div>
+            <div class="marksheet-details-item">
+              <span>पिता का नाम:</span>
+              <span id="lbl-fname">श्री मदन व्यास</span>
+            </div>
+            <div class="marksheet-details-item">
+              <span>माता का नाम:</span>
+              <span id="lbl-mname">श्रीमती रेखा देवी</span>
+            </div>
+            <div class="marksheet-details-item">
+              <span>माध्यम / वर्ग:</span>
+              <span id="lbl-medium">अंग्रेजी / सामान्य</span>
+            </div>
+          </div>
+
+          <!-- Subjects Marks Table -->
+          <table class="marksheet-table" id="marksheet-table-data">
+            <thead>
+              <tr>
+                <th style="width: 15%;">विषय कोड</th>
+                <th style="width: 35%; text-align: left;">विषय (Subject)</th>
+                <th style="width: 12%;">पूर्णांक (Max)</th>
+                <th style="width: 12%;">सैद्धांतिक (Theory)</th>
+                <th style="width: 12%;">सत्रांक (Sess.)</th>
+                <th style="width: 14%;">योग (Total)</th>
+              </tr>
+            </thead>
+            <tbody id="marksheet-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+
+          <!-- Result summary block -->
+          <div class="marksheet-result-summary">
+            <div>
+              कुल प्राप्तांक (TOTAL): <span id="lbl-total-marks" style="color: var(--primary-dark);">586 / 600</span>
+            </div>
+            <div>
+              प्रतिशत (PERCENTAGE): <span id="lbl-percent">97.67%</span>
+            </div>
+            <div>
+              परिणाम (RESULT): <span id="lbl-result" style="color: #15803d;">PASS I DIVISION DIST.</span>
+            </div>
+          </div>
+
+          <!-- Marksheet bottom signature area -->
+          <div class="marksheet-footer">
+            <div class="marksheet-sign">
+              <div class="marksheet-sign-line"></div>
+              <span>तैयारकर्ता (Prepared By)</span>
+            </div>
+            <div class="marksheet-sign">
+              <div class="marksheet-sign-line" style="margin-left:auto; margin-right:auto;"></div>
+              <span>परीक्षा प्रभारी (Exam In-charge)</span>
+            </div>
+            <div class="marksheet-sign">
+              <div style="width: 150px; font-family: 'Outfit'; font-weight: 800; font-size: 0.95rem; color: rgba(0, 51, 153, 0.4); margin-bottom: 2px;">
+                SSVM MANDLI
+              </div>
+              <div class="marksheet-sign-line"></div>
+              <span>प्रधानाचार्य (Principal Seal)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shared Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3 style="font-family: var(--font-display); font-weight: 700; color: #fff; margin-bottom: 20px;">श्री सरस्वती विद्या मंदिर</h3>
+        <p class="footer-desc">
+          श्री एम. एल. शिक्षण संस्थान द्वारा संचालित, हमारा विद्यालय छात्रों को अनुशासन, संस्कार और आधुनिक शिक्षा का अनूठा समन्वय प्रदान करता है।
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/ssvmeducation" target="_blank" class="footer-social-link" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="mailto:ssvmorg@gmail.com" class="footer-social-link" aria-label="Email Us"><i class="fa-solid fa-envelope"></i></a>
+          <a href="tel:9413030806" class="footer-social-link" aria-label="Call Us"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>त्वरित लिंक्स</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">हमारे बारे में</a></li>
+          <li><a href="academics.html">प्रवेश एवं शुल्क</a></li>
+          <li><a href="hostel.html">छात्रावास जीवन</a></li>
+          <li><a href="transport.html">वाहन मार्ग</a></li>
+          <li><a href="achievements.html">सत्र उपलब्धियां</a></li>
+          <li><a href="result.html">परीक्षा परिणाम</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>अकादमिक धाराएँ</h3>
+        <ul class="footer-links">
+          <li><a>11वीं-12वीं विज्ञान वर्ग</a></li>
+          <li><a>11वीं-12वीं कला वर्ग</a></li>
+          <li><a>11वीं-12वीं कृषि वर्ग</a></li>
+          <li><a>अंग्रेजी माध्यम (LKG-X)</a></li>
+          <li><a>हिंदी माध्यम (Nursery-XII)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>संपर्क सूत्र (Contact)</h3>
+        <p class="footer-contact-item"><i class="fa-solid fa-location-dot" style="color: var(--secondary);"></i>  मंडली, कल्याणपुर, बालोतरा (राजस्थान) - 344026</p>
+        <p class="footer-contact-item"><i class="fa-solid fa-phone" style="color: var(--secondary);"></i> 9413030806, 8854030806</p>
+        <p class="footer-contact-item"><i class="fa-solid fa-envelope" style="color: var(--secondary);"></i> ssvmorg@gmail.com</p>
+        <p class="footer-contact-item"><i class="fa-solid fa-id-card" style="color: var(--secondary);"></i> RBSE Affiliation Code: 1040470</p>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 श्री सरस्वती उच्च माध्यमिक विद्या मंदिर, मंडली। सर्वाधिकार सुरक्षित।</p>
+      <p>Designed with ❤️ by Antigravity | Hosted on GitHub</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Result form handlers
+    function fillRoll(val) {
+      document.getElementById('roll-number-input').value = val;
+      // Trigger search automatically for convenience
+      const form = document.getElementById('result-search-form');
+      form.dispatchEvent(new Event('submit', { cancelable: true }));
+    }
+  </script>
+</body>
+</html>

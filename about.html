@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>हमारे बारे में (About Us) | Shri Saraswati Senior Secondary Vidya Mandir</title>
+  <meta name="description" content="श्री सरस्वती सीनियर सेकेंडरी विद्या मंदिर, मंडली का इतिहास, विजन, मिशन, शिक्षण सिद्धांत और आधुनिक परिसर संरचना।">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Shared Header -->
+  <header id="header">
+    <div class="container header-container">
+      <div class="branding">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="1SSVM Logo 2000x.png" alt="SSVM Mandli Logo" onerror="this.src='SSVM Logo 2000x.jpg'">
+          </a>
+        </div>
+        <div class="branding-text">
+          <span class="school-title">श्री सरस्वती विद्या मंदिर</span>
+          <span class="school-subtitle">मंडली, कल्याणपुर, बालोतरा (राज.)</span>
+        </div>
+      </div>
+      
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">मुख्य पृष्ठ (Home)</a>
+        <a href="about.html" class="nav-link">हमारे बारे में (About)</a>
+        <a href="academics.html" class="nav-link">अकादमिक एवं प्रवेश (Academics)</a>
+        <a href="hostel.html" class="nav-link">छात्रावास (Hostel)</a>
+        <a href="transport.html" class="nav-link">वाहन व्यवस्था (Transport)</a>
+        <a href="achievements.html" class="nav-link">उपलब्धियां (Gallery)</a>
+        <a href="result.html" class="nav-link">परीक्षा परिणाम (Results)</a>
+        <a href="contact.html" class="nav-cta">संपर्क करें (Contact)</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <h1 class="anim-slide-up">हमारे बारे में (About Us)</h1>
+      <div class="page-breadcrumbs">
+        <a href="index.html">मुख्य पृष्ठ</a> &gt; <span>हमारे बारे में</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- History & Management Message -->
+  <section class="section section-white">
+    <div class="container grid-2" style="align-items: center;">
+      <div class="anim-slide-up">
+        <span class="section-pretitle">संस्थान का परिचय</span>
+        <h2 class="section-title">श्री एम. एल. शिक्षण संस्थान</h2>
+        <p class="hero-desc" style="font-size: 1rem; margin-bottom: 20px;">
+          श्री एम. एल. शिक्षण संस्थान द्वारा संचालित <strong>श्री सरस्वती सीनियर सेकेंडरी विद्या मंदिर, मंडली</strong> की स्थापना ग्रामीण क्षेत्र के बच्चों को उच्च स्तरीय और सुसंस्कृत शिक्षा प्रदान करने के उद्देश्य से की गई थी।
+        </p>
+        <p style="color: var(--neutral-text); margin-bottom: 20px;">
+          हमारा मानना है कि शिक्षा केवल किताबी ज्ञान तक सीमित नहीं होनी चाहिए, बल्कि यह बालक में नैतिक मूल्यों, सामाजिक उत्तरदायित्व और मजबूत चरित्र का निर्माण करने वाली होनी चाहिए। इसी भावना के साथ हमारे संस्थान ने "शिक्षा, संस्कार और अनुशासन" को अपना मूल मंत्र बनाया है।
+        </p>
+        <blockquote style="border-left: 4px solid var(--secondary); padding-left: 20px; font-style: italic; color: var(--primary-dark); font-weight: 600; margin-bottom: 24px;">
+          "जो खुद पर शासन करना सीखता है, वही दुनिया में पहचान बनाता है - नियम बोझ नहीं, आपकी उड़ान की दिशा हैं!"
+        </blockquote>
+      </div>
+      <div>
+        <img src="Poster2.jpg" alt="School Poster" style="max-width: 100%; border-radius: 12px; box-shadow: var(--hover-shadow); cursor: pointer;" onclick="openLightbox('Poster2.jpg', 'School Branding and Toppers Poster')">
+        <p class="school-subtitle" style="text-align: center; margin-top: 10px;"><i class="fa-solid fa-magnifying-glass-plus"></i> चित्र पर क्लिक करके बड़ा देखें (Click to Zoom)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Pillars -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pretitle">हमारे मार्गदर्शक सिद्धांत</span>
+        <h2 class="section-title">तीन आधार स्तंभ: शिक्षा, संस्कार, अनुशासन</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="card" style="text-align: center;">
+          <div class="card-icon" style="margin: 0 auto 24px;"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3 class="card-title">उत्कृष्ट शिक्षा (Education)</h3>
+          <p class="card-desc">विद्यार्थियों को बोर्ड परीक्षाओं में उत्कृष्ट अंक दिलाने के लिए विशेष टेस्ट सीरीज, दैनिक अभ्यास पत्रक (DPP) और 3 प्री-बोर्ड परीक्षाओं का कड़ा आयोजन किया जाता है।</p>
+        </div>
+
+        <div class="card" style="text-align: center;">
+          <div class="card-icon" style="margin: 0 auto 24px;"><i class="fa-solid fa-handshake-angle"></i></div>
+          <h3 class="card-title">संस्कार (Values)</h3>
+          <p class="card-desc">विद्यार्थियों में विनम्रता, बड़ों का आदर, प्रार्थना सभा के माध्यम से प्रार्थना और राष्ट्रभक्ति के संस्कारों का सिंचन किया जाता है। "विद्या ददाति विनयम" ही हमारा पथप्रदर्शक है।</p>
+        </div>
+
+        <div class="card" style="text-align: center;">
+          <div class="card-icon" style="margin: 0 auto 24px;"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="card-title">कठोर अनुशासन (Discipline)</h3>
+          <p class="card-desc">समयबद्धता, स्वच्छ यूनिफॉर्म, नियमित बायोमेट्रिक उपस्थिति और परिसर में मर्यादित आचरण का पालन करना अनिवार्य है। परिसर में मोबाइल व इलेक्ट्रॉनिक उपकरण पूर्णतः वर्जित हैं।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Infrastructure Section -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pretitle">अत्याधुनिक परिसर</span>
+        <h2 class="section-title">हमारी आधारभूत संरचना एवं सुविधाएं</h2>
+        <p class="section-desc">परिसर को विद्यार्थियों की हर शैक्षणिक व व्यावहारिक आवश्यकता को ध्यान में रखकर सुसज्जित किया गया है।</p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Item 1 -->
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-flask"></i></div>
+          <h3 class="card-title">सुसज्जित प्रयोगशालाएं (Labs)</h3>
+          <p class="card-desc">विज्ञान वर्ग के विद्यार्थियों के लिए भौतिक विज्ञान (Physics), रसायन विज्ञान (Chemistry) और कला वर्ग के लिए भूगोल (Geography) की सुसज्जित प्रैक्टिकल प्रयोगशालाएं उपलब्ध हैं।</p>
+        </div>
+        
+        <!-- Item 2 -->
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-volleyball"></i></div>
+          <h3 class="card-title">खेल मैदान (Sports Grounds)</h3>
+          <p class="card-desc">शारीरिक विकास के लिए विद्यालय में खो-खो (Kho-Kho) मैदान, वॉलीबॉल (Volleyball) कोर्ट और एथलेटिक्स अभ्यास के लिए विशाल खेल मैदान उपलब्ध है। नियमित खेल समय (Game Period) का आयोजन होता है।</p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+          <h3 class="card-title">स्वच्छ पेयजल व स्वच्छता</h3>
+          <p class="card-desc">विद्यार्थियों के स्वास्थ्य को प्राथमिकता देते हुए परिसर में पानी की स्वच्छ प्याऊ की व्यवस्था है। संपूर्ण परिसर में स्वच्छता और अनुशासन बनाए रखने के लिए शिक्षक प्रभारियों की नियमित कैंपस मॉनिटरिंग ड्यूटी लगाई जाती है।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shared Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3 style="font-family: var(--font-display); font-weight: 700; color: #fff; margin-bottom: 20px;">श्री सरस्वती विद्या मंदिर</h3>
+        <p class="footer-desc">
+          श्री एम. एल. शिक्षण संस्थान द्वारा संचालित, हमारा विद्यालय छात्रों को अनुशासन, संस्कार और आधुनिक शिक्षा का अनूठा समन्वय प्रदान करता है।
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/ssvmeducation" target="_blank" class="footer-social-link" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="mailto:ssvmorg@gmail.com" class="footer-social-link" aria-label="Email Us"><i class="fa-solid fa-envelope"></i></a>
+          <a href="tel:9413030806" class="footer-social-link" aria-label="Call Us"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>त्वरित लिंक्स</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">हमारे बारे में</a></li>
+          <li><a href="academics.html">प्रवेश एवं शुल्क</a></li>
+          <li><a href="hostel.html">छात्रावास जीवन</a></li>
+          <li><a href="transport.html">वाहन मार्ग</a></li>
+          <li><a href="achievements.html">सत्र उपलब्धियां</a></li>
+          <li><a href="result.html">परीक्षा परिणाम</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>अकादमिक धाराएँ</h3>
+        <ul class="footer-links">
+          <li><a>11वीं-12वीं विज्ञान वर्ग</a></li>
+          <li><a>11वीं-12वीं कला वर्ग</a></li>
+          <li><a>11वीं-12वीं कृषि वर्ग</a></li>
+          <li><a>अंग्रेजी माध्यम (LKG-X)</a></li>
+          <li><a>हिंदी माध्यम (Nursery-XII)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>संपर्क सूत्र (Contact)</h3>
+        <p class="footer-contact-item"><i class="fa-solid fa-location-dot" style="color: var(--secondary);"></i>  मंडली, कल्याणपुर, बालोतरा (राजस्थान) - 344026</p>
+        <p class="footer-contact-item"><i class="fa-solid fa-phone" style="color: var(--secondary);"></i> 9413030806, 8854030806</p>
+        <p class="footer-contact-item"><i class="fa-solid fa-envelope" style="color: var(--secondary);"></i> ssvmorg@gmail.com</p>
+        <p class="footer-contact-item"><i class="fa-solid fa-id-card" style="color: var(--secondary);"></i> RBSE Affiliation Code: 1040470</p>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 श्री सरस्वती उच्च माध्यमिक विद्या मंदिर, मंडली। सर्वाधिकार सुरक्षित।</p>
+      <p>Designed with ❤️ by Antigravity | Hosted on GitHub</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>छात्रावास जीवन (Hostel Life) | Shri Saraswati Senior Secondary Vidya Mandir</title>
+  <meta name="description" content="श्री सरस्वती छात्रावास - सुरक्षित, अनुशासित एवं व्यवस्थित आवास। दैनिक समय-सारणी, साप्ताहिक भोजन मेनू और नियमावली।">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Shared Header -->
+  <header id="header">
+    <div class="container header-container">
+      <div class="branding">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="1SSVM Logo 2000x.png" alt="SSVM Mandli Logo" onerror="this.src='SSVM Logo 2000x.jpg'">
+          </a>
+        </div>
+        <div class="branding-text">
+          <span class="school-title">श्री सरस्वती विद्या मंदिर</span>
+          <span class="school-subtitle">मंडली, कल्याणपुर, बालोतरा (राज.)</span>
+        </div>
+      </div>
+      
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">मुख्य पृष्ठ (Home)</a>
+        <a href="about.html" class="nav-link">हमारे बारे में (About)</a>
+        <a href="academics.html" class="nav-link">अकादमिक एवं प्रवेश (Academics)</a>
+        <a href="hostel.html" class="nav-link">छात्रावास (Hostel)</a>
+        <a href="transport.html" class="nav-link">वाहन व्यवस्था (Transport)</a>
+        <a href="achievements.html" class="nav-link">उपलब्धियां (Gallery)</a>
+        <a href="result.html" class="nav-link">परीक्षा परिणाम (Results)</a>
+        <a href="contact.html" class="nav-cta">संपर्क करें (Contact)</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <h1 class="anim-slide-up">श्री सरस्वती छात्रावास (Hostel Life)</h1>
+      <div class="page-breadcrumbs">
+        <a href="index.html">मुख्य पृष्ठ</a> &gt; <span>छात्रावास</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="section section-white">
+    <div class="container grid-2" style="align-items: center;">
+      <div>
+        <span class="section-pretitle">आवासीय सुविधा</span>
+        <h2 class="section-title">एक अनुशासित एवं स्नेहपूर्ण छात्रावास परिसर</h2>
+        <p class="hero-desc" style="font-size: 1rem; margin-bottom: 20px;">
+          श्री सरस्वती छात्रावास (Shri Saraswati Hostel), मंडली (बालोतरा) का संचालन <strong>श्री एम. एल. शिक्षण संस्थान</strong> के मार्गदर्शन में किया जाता है। हमारा उद्देश्य विद्यार्थियों को घर जैसा सुरक्षित वातावरण प्रदान करने के साथ-साथ उनके समग्र शैक्षणिक और व्यक्तिगत विकास को सुदृढ़ बनाना है।
+        </p>
+        <p style="color: var(--neutral-text); margin-bottom: 20px;">
+          छात्रावास में कड़े अनुशासन का पालन किया जाता है। विद्यार्थियों को दैनिक मौन स्वाध्याय, संतुलित भोजन, खेल सत्र और स्वास्थ्य सुरक्षा की बेहतरीन सुविधा प्रदान की जाती है ताकि वे ध्यान केंद्रित करके सर्वश्रेष्ठ परिणाम प्राप्त कर सकें।
+        </p>
+        <div style="display: flex; gap: 16px; margin-top: 24px;">
+          <a href="#timetable" class="btn btn-primary">दैनिक समय-सारणी</a>
+          <a href="#menu" class="btn btn-secondary">भोजन मेनू देखें</a>
+        </div>
+      </div>
+      <div class="checklist-container">
+        <h3 class="card-title" style="color: var(--primary); margin-bottom: 8px;"><i class="fa-solid fa-list-check"></i> लाने योग्य सामग्री (Parent Checklist)</h3>
+        <p class="card-desc" style="font-size: 0.85rem;">छात्रावास में प्रवेश के समय अभिभावक निम्नलिखित सामग्री सुनिश्चित करें:</p>
+        
+        <div class="checklist-grid">
+          <label class="checklist-item"><input type="checkbox"> बिस्तर जोड़ी (Bedding set)</label>
+          <label class="checklist-item"><input type="checkbox"> सिविल ड्रेस (Civil clothing)</label>
+          <label class="checklist-item"><input type="checkbox"> एक लोअर व टी-शर्ट</label>
+          <label class="checklist-item"><input type="checkbox"> ब्रश, कंघा, काँच, तेल, साबुन</label>
+          <label class="checklist-item"><input type="checkbox"> कपड़े का ब्रश व साबुनदानी</label>
+          <label class="checklist-item"><input type="checkbox"> एक बक्सा या संदूक (Trunk)</label>
+          <label class="checklist-item"><input type="checkbox"> चप्पल व काले जूते</label>
+          <label class="checklist-item"><input type="checkbox"> सम्पूर्ण पाठ्यसामग्री (Books/Bag)</label>
+        </div>
+        <p class="school-subtitle" style="margin-top: 15px; color: var(--secondary-dark);"><i class="fa-solid fa-circle-exclamation"></i> नोट: मोबाइल फोन और इलेक्ट्रॉनिक उपकरण लाना पूरी तरह वर्जित है।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Daily Timetable Timeline -->
+  <section class="section section-alt" id="timetable">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pretitle">दैनिक दिनचर्या</span>
+        <h2 class="section-title">छात्रावास दैनिक समय-सारणी (Daily Schedule)</h2>
+        <p class="section-desc">समयबद्धता सफलता की कुंजी है। छात्रावास में एक संतुलित और संरचित समय-सारणी लागू है जो विद्यार्थियों को पढ़ाई, आराम और खेल का समान अवसर देती है।</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Event 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-time">04:30 AM</span>
+            <h3 class="timeline-title">जागरण (Wake Up) - कक्षा 9वीं से 12वीं</h3>
+            <p class="timeline-desc">वरिष्ठ विद्यार्थियों का जागरण। स्नान का प्रथम स्लॉट (कक्षा 10वीं व 12वीं: 04:30 - 05:00 AM)। स्नान का द्वितीय स्लॉट (कक्षा 9वीं व 11वीं: 05:00 - 05:30 AM)।</p>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-time">05:30 AM</span>
+            <h3 class="timeline-title">जागरण (Wake Up) - कक्षा 1 से 8वीं</h3>
+            <p class="timeline-desc">कनिष्ठ विद्यार्थियों का जागरण। स्नान स्लॉट (कक्षा 6वीं से 8वीं: 05:30 - 05:45 AM, कक्षा 1 से 5वीं: 05:45 - 06:00 AM)।</p>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-time">04:30 - 07:30 AM</span>
+            <h3 class="timeline-title">मौन स्वाध्याय (Self Study)</h3>
+            <p class="timeline-desc">सभी छात्रों के लिए मौन स्वाध्याय, गृहकार्य और विषय दोहराव (06:00 AM से छोटे बच्चों के लिए विशेष)। 07:15 AM पर सामूहिक प्रार्थना सभा एवं बायोमेट्रिक उपस्थिति।</p>
+          </div>
+        </div>
+
+        <!-- Event 4 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-time">07:30 - 07:50 AM</span>
+            <h3 class="timeline-title">प्रातः नाश्ता (Breakfast Time)</h3>
+            <p class="timeline-desc">संतुलित और पौष्टिक नाश्ता। सभी छात्र शालीनता से पंक्तिबद्ध होकर नाश्ता प्राप्त करते हैं।</p>
+          </div>
+        </div>
+
+        <!-- Event 5 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-time">08:00 AM - 02:15 PM</span>
+            <h3 class="timeline-title">विद्यालय समय (School Time)</h3>
+            <p class="timeline-desc">विद्यालय में नियमित शिक्षण। दोपहर 12:00 PM पर स्कूल शेड्यूलिंग के अनुसार पौष्टिक दोपहर भोजन (Lunch)।</p>
+          </div>
+        </div>
+
+        <!-- Event 6 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-time">02:15 - 04:30 PM</span>
+            <h3 class="timeline-title">छात्रावास वापसी एवं विश्राम</h3>
+            <p class="timeline-desc">छात्रावास में वापसी। 02:15 - 02:30 PM पर कपड़े बदलना व हाथ-मुँह धोना। इसके बाद 02:30 - 04:30 PM तक अनिवार्य दोपहर की नींद/विश्राम।</p>
+          </div>
+        </div>
+
+        <!-- Event 7 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-time">04:30 - 07:30 PM</span>
+            <h3 class="timeline-title">स्वाध्याय, खेल सत्र एवं प्रार्थना</h3>
+            <p class="timeline-desc">04:30 - 05:30 PM स्वाध्याय एवं गृहकार्य। 06:00 - 07:15 PM खेल सत्र (Games Period - वॉलीबॉल, खो-खो आदि)। 07:15 - 07:30 PM सायंकालीन प्रार्थना सभा एवं उपस्थिति।</p>
+          </div>
+        </div>
+
+        <!-- Event 8 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-time">07:30 - 10:00 PM</span>
+            <h3 class="timeline-title">रात्रि भोजन, सायंकालीन कक्षाएं एवं शयन</h3>
+            <p class="timeline-desc">07:30 - 07:50 PM रात्रि भोजन (Dinner)। 08:00 - 09:10 PM विशेष सायंकालीन कक्षाएं (Evening Classes)। 09:30 - 10:00 PM मौन रिवीजन स्वाध्याय। 10:30 PM (कक्षा 1-8) तथा 11:00 PM (कक्षा 9-12) के लिए सोने का समय।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meal Menu Section -->
+  <section class="section section-white" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pretitle">स्वास्थ्यप्रद आहार</span>
+        <h2 class="section-title">छात्रावास भोजन मेनू (Rotational Meal Menu)</h2>
+        <p class="section-desc">श्री सरस्वती छात्रावास में शुद्ध, शाकाहारी और स्वच्छ भोजन परोसा जाता है। हमारे यहाँ दो साप्ताहिक चक्रों में भोजन का रोटेशन किया जाता है।</p>
+      </div>
+
+      <div class="tabs-container">
+        <div class="tabs-nav">
+          <button class="tab-btn active" onclick="switchMenuTab('menu-week-1', this)">भोजन सूची - चक्र 1 (Menu Set 1)</button>
+          <button class="tab-btn" onclick="switchMenuTab('menu-week-2', this)">भोजन सूची - चक्र 2 (Menu Set 2)</button>
+        </div>
+
+        <!-- Week 1 Content -->
+        <div id="menu-week-1" class="tab-content active">
+          <div class="menu-grid">
+            <!-- Mon -->
+            <div class="menu-day-card">
+              <span class="menu-day-title">सोमवार</span>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">नाश्ता</span>
+                <span class="menu-meal-name">दाल चावल</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">दोपहर</span>
+                <span class="menu-meal-name">ग्वारफली + कढ़ी</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">रात्रि</span>
+                <span class="menu-meal-name">दाल + मिक्स सब्जी</span>
+              </div>
+            </div>
+            <!-- Tue -->
+            <div class="menu-day-card">
+              <span class="menu-day-title">मंगलवार</span>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">नाश्ता</span>
+                <span class="menu-meal-name">पोहा</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">दोपहर</span>
+                <span class="menu-meal-name">दाल + मिक्स सब्जी + छाछ</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">रात्रि</span>
+                <span class="menu-meal-name">ग्वारफली + कढ़ी</span>
+              </div>
+            </div>
+            <!-- Wed -->
+            <div class="menu-day-card">
+              <span class="menu-day-title">बुधवार</span>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">नाश्ता</span>
+                <span class="menu-meal-name">नमकीन चावल</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">दोपहर</span>
+                <span class="menu-meal-name">दाल + चटनी</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">रात्रि</span>
+                <span class="menu-meal-name">दाल + आलू प्याज</span>
+              </div>
+            </div>
+            <!-- Thu -->
+            <div class="menu-day-card">
+              <span class="menu-day-title">गुरुवार</span>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">नाश्ता</span>
+                <span class="menu-meal-name">दाल चावल</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">दोपहर</span>
+                <span class="menu-meal-name">दाल + आलू प्याज + छाछ</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">रात्रि</span>
+                <span class="menu-meal-name">कैरी गूंदा + दाल</span>
+              </div>
+            </div>
+            <!-- Fri -->
+            <div class="menu-day-card">
+              <span class="menu-day-title">शुक्रवार</span>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">नाश्ता</span>
+                <span class="menu-meal-name">पोहा</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">दोपहर</span>
+                <span class="menu-meal-name">पतागोभी + कढ़ी</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">रात्रि</span>
+                <span class="menu-meal-name">रायता</span>
+              </div>
+            </div>
+            <!-- Sat -->
+            <div class="menu-day-card">
+              <span class="menu-day-title">शनिवार</span>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">नाश्ता</span>
+                <span class="menu-meal-name">दाल चावल</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">दोपहर</span>
+                <span class="menu-meal-name">भिन्डी टमाटर + अचार</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">रात्रि</span>
+                <span class="menu-meal-name">कैरी गूंदा + दाल</span>
+              </div>
+            </div>
+            <!-- Sun -->
+            <div class="menu-day-card">
+              <span class="menu-day-title">रविवार</span>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">नाश्ता</span>
+                <span class="menu-meal-name">पोहा</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">दोपहर</span>
+                <span class="menu-meal-name">गट्टा सब्जी</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">रात्रि</span>
+                <span class="menu-meal-name">हरा टमाटर प्याज</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Week 2 Content -->
+        <div id="menu-week-2" class="tab-content">
+          <div class="menu-grid">
+            <!-- Mon -->
+            <div class="menu-day-card">
+              <span class="menu-day-title">सोमवार</span>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">नाश्ता</span>
+                <span class="menu-meal-name">पोहा</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">दोपहर</span>
+                <span class="menu-meal-name">आलू प्याज + दाल</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">रात्रि</span>
+                <span class="menu-meal-name">हरा टमाटर मिर्ची + कढ़ी</span>
+              </div>
+            </div>
+            <!-- Tue -->
+            <div class="menu-day-card">
+              <span class="menu-day-title">मंगलवार</span>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">नाश्ता</span>
+                <span class="menu-meal-name">दाल चावल</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">दोपहर</span>
+                <span class="menu-meal-name">फूलगोभी मटर + छाछ | सलाद</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">रात्रि</span>
+                <span class="menu-meal-name">ककड़ी टमाटर + अचार</span>
+              </div>
+            </div>
+            <!-- Wed -->
+            <div class="menu-day-card">
+              <span class="menu-day-title">बुधवार</span>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">नाश्ता</span>
+                <span class="menu-meal-name">मीठा चावल</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">दोपहर</span>
+                <span class="menu-meal-name">दाल + मिक्स सब्जी</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">रात्रि</span>
+                <span class="menu-meal-name">रायता</span>
+              </div>
+            </div>
+            <!-- Thu -->
+            <div class="menu-day-card">
+              <span class="menu-day-title">गुरुवार</span>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">नाश्ता</span>
+                <span class="menu-meal-name">दाल चावल</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">दोपहर</span>
+                <span class="menu-meal-name">पतागोभी + छाछ</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">रात्रि</span>
+                <span class="menu-meal-name">मिर्ची कूटा + दाल</span>
+              </div>
+            </div>
+            <!-- Fri -->
+            <div class="menu-day-card">
+              <span class="menu-day-title">शुक्रवार</span>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">नाश्ता</span>
+                <span class="menu-meal-name">पोहा</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">दोपहर</span>
+                <span class="menu-meal-name">कढ़ी</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">रात्रि</span>
+                <span class="menu-meal-name">हरा टमाटर मिर्ची + अचार</span>
+              </div>
+            </div>
+            <!-- Sat -->
+            <div class="menu-day-card">
+              <span class="menu-day-title">शनिवार</span>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">नाश्ता</span>
+                <span class="menu-meal-name">मीठा उपेट</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">दोपहर</span>
+                <span class="menu-meal-name">दाल + चटनी</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">रात्रि</span>
+                <span class="menu-meal-name">रायता</span>
+              </div>
+            </div>
+            <!-- Sun -->
+            <div class="menu-day-card">
+              <span class="menu-day-title">रविवार</span>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">नाश्ता</span>
+                <span class="menu-meal-name">स्पेशल नाश्ता | दाल चावल</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">दोपहर</span>
+                <span class="menu-meal-name">गट्टा सब्जी</span>
+              </div>
+              <div class="menu-meal-block">
+                <span class="menu-meal-label">रात्रि</span>
+                <span class="menu-meal-name">पतागोभी + दाल</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <p class="school-subtitle" style="text-align: center; margin-top: 24px; color: var(--neutral-muted);">
+        <strong>विशेष डाइट नियम:</strong> महीने के प्रत्येक तीसरे व पांचवे रविवार को स्पेशल नाश्ता तथा प्रत्येक दूसरे व चौथे रविवार को स्पेशल डाइट दी जाती है।
+      </p>
+    </div>
+  </section>
+
+  <!-- Rules & Codes of Conduct -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pretitle">अनुशासन एवं आचरण</span>
+        <h2 class="section-title">छात्रावास नियमावली एवं आचार संहिता</h2>
+        <p class="section-desc">छात्रावास में सौहार्दपूर्ण, सुरक्षित और शैक्षिक रूप से समृद्ध वातावरण बनाए रखने के लिए नियमों का पालन अनिवार्य है।</p>
+      </div>
+
+      <div class="grid-2">
+        <!-- Students rules -->
+        <div class="card">
+          <h3 class="card-title" style="color: var(--secondary-dark);"><i class="fa-solid fa-user-shield"></i> छात्रों के लिए आचार संहिता</h3>
+          <ul class="rules-list rules-list-danger" style="font-size: 0.9rem;">
+            <li><strong>मोबाइल फोन वर्जित:</strong> छात्रों द्वारा मोबाइल या अन्य कोई इलेक्ट्रॉनिक उपकरण लाना पूरी तरह मना है।</li>
+            <li><strong>रविवार को बातचीत:</strong> अभिभावकों से केवल रविवार को ही बात कराई जाएगी। संपर्क सूत्र: <strong>9351521457</strong>, <strong>8854030806</strong>।</li>
+            <li><strong>अवकाश दण्ड:</strong> बिना पूर्व सूचना छात्रावास छोड़ने पर ₹500 तथा अवकाश समाप्ति के बाद विलंब से लौटने पर ₹100 प्रतिदिन पेनल्टी लागू होगी।</li>
+            <li><strong>स्वच्छता एवं रख-रखाव:</strong> प्रतिदिन कमरों में झाड़ू लगाना, बाथरूम में गंदगी न छोड़ना और प्रत्येक रविवार को सामूहिक सफाई अभियान में भाग लेना अनिवार्य है।</li>
+            <li><strong>शैक्षणिक मर्यादा:</strong> स्वाध्याय (Self Study) समय में पूर्ण मौन एवं गंभीरता बनाए रखें। अनुशासनहीनता पर छात्रावास से तत्काल निष्कासन संभव है।</li>
+          </ul>
+        </div>
+
+        <!-- Wardens rules -->
+        <div class="card">
+          <h3 class="card-title" style="color: var(--primary);"><i class="fa-solid fa-user-gear"></i> छात्रावास वार्डन हेतु आचार संहिता</h3>
+          <ul class="rules-list" style="font-size: 0.9rem;">
+            <li><strong>सुबह जागरण:</strong> वार्डन सुबह 4:30 AM जागरण से पूर्व स्वयं तैयार होकर छात्रों को समय पर जगाएंगे और दिनचर्या प्रारंभ करवाएंगे।</li>
+            <li><strong>दैनिक निरीक्षण:</strong> वार्डन कमरों, शौचालयों और भोजनशाला की साफ-सफाई का प्रतिदिन निरीक्षण करेंगे और टूटे उपकरणों की मरम्मत की रिपोर्ट देंगे।</li>
+            <li><strong>सह-भोजन नियम:</strong> वार्डन स्वयं छात्रों के साथ बैठकर भोजन करेंगे और भोजनशाला में पूर्ण शांति एवं अनुशासन सुनिश्चित करेंगे।</li>
+            <li><strong>बायोमेट्रिक मिलान:</strong> दैनिक रूप से तीन बार उपस्थिति लेंगे (जागरण, दोपहर भोजन पूर्व, रात को सोने से पूर्व)।</li>
+            <li><strong>नॉन-बायस गाइडेंस:</strong> छात्रों के साथ निष्पक्ष और आदर्श मार्गदर्शक का व्यवहार रखेंगे। किसी भी प्रकार का व्यक्तिगत या पक्षपातपूर्ण संबंध वर्जित है।</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Laundry details table -->
+      <div style="margin-top: 48px;">
+        <h3 class="card-title text-center" style="text-align: center; margin-bottom: 24px;"><i class="fa-solid fa-soap" style="color: var(--primary);"></i> कपड़े धोने की समय-सारणी (Laundry Schedule)</h3>
+        <div class="table-responsive" style="max-width: 700px; margin: 0 auto;">
+          <table class="routes-table" style="text-align: center;">
+            <thead>
+              <tr>
+                <th>दिन (Day)</th>
+                <th>समय (Time)</th>
+                <th>रसोई के पास (Near Kitchen)</th>
+                <th>टांके के पास (Near Water Tank)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2" style="font-weight: 700;">बुधवार</td>
+                <td>06:00 – 06:30 AM</td>
+                <td>कक्षा 6ठी से 8वीं</td>
+                <td>कक्षा 10वीं</td>
+              </tr>
+              <tr>
+                <td>06:30 – 07:00 AM</td>
+                <td>कक्षा 1ली से 5वीं</td>
+                <td>कक्षा 11वीं</td>
+              </tr>
+              <tr>
+                <td rowspan="2" style="font-weight: 700;">शुक्रवार</td>
+                <td>06:00 – 06:30 AM</td>
+                <td>कक्षा 9वीं</td>
+                <td>कक्षा 12वीं</td>
+              </tr>
+              <tr>
+                <td>06:30 – 07:00 AM</td>
+                <td>कक्षा 1ली से 5वीं</td>
+                <td>कक्षा 10वीं</td>
+              </tr>
+              <tr>
+                <td rowspan="2" style="font-weight: 700;">रविवार</td>
+                <td>06:00 – 06:30 AM</td>
+                <td>कक्षा 6ठी से 8वीं</td>
+                <td>कक्षा 11वीं</td>
+              </tr>
+              <tr>
+                <td>06:30 – 07:00 AM</td>
+                <td>कक्षा 9वीं</td>
+                <td>कक्षा 12वीं</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="school-subtitle" style="text-align: center; margin-top: 12px;">
+          * प्रत्येक छात्र को सप्ताह में दो बार कपड़े धोने का स्लॉट मिलेगा। इसके अतिरिक्त वाडन की अनुमति आवश्यक होगी।
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shared Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3 style="font-family: var(--font-display); font-weight: 700; color: #fff; margin-bottom: 20px;">श्री सरस्वती विद्या मंदिर</h3>
+        <p class="footer-desc">
+          श्री एम. एल. शिक्षण संस्थान द्वारा संचालित, हमारा विद्यालय छात्रों को अनुशासन, संस्कार और आधुनिक शिक्षा का अनूठा समन्वय प्रदान करता है।
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/ssvmeducation" target="_blank" class="footer-social-link" aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="mailto:ssvmorg@gmail.com" class="footer-social-link" aria-label="Email Us"><i class="fa-solid fa-envelope"></i></a>
+          <a href="tel:9413030806" class="footer-social-link" aria-label="Call Us"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>त्वरित लिंक्स</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">हमारे बारे में</a></li>
+          <li><a href="academics.html">प्रवेश एवं शुल्क</a></li>
+          <li><a href="hostel.html">छात्रावास जीवन</a></li>
+          <li><a href="transport.html">वाहन मार्ग</a></li>
+          <li><a href="achievements.html">सत्र उपलब्धियां</a></li>
+          <li><a href="result.html">परीक्षा परिणाम</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>अकादमिक धाराएँ</h3>
+        <ul class="footer-links">
+          <li><a>11वीं-12वीं विज्ञान वर्ग</a></li>
+          <li><a>11वीं-12वीं कला वर्ग</a></li>
+          <li><a>11वीं-12वीं कृषि वर्ग</a></li>
+          <li><a>अंग्रेजी माध्यम (LKG-X)</a></li>
+          <li><a>हिंदी माध्यम (Nursery-XII)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>संपर्क सूत्र (Contact)</h3>
+        <p class="footer-contact-item"><i class="fa-solid fa-location-dot" style="color: var(--secondary);"></i>  मंडली, कल्याणपुर, बालोतरा (राजस्थान) - 344026</p>
+        <p class="footer-contact-item"><i class="fa-solid fa-phone" style="color: var(--secondary);"></i> 9413030806, 8854030806</p>
+        <p class="footer-contact-item"><i class="fa-solid fa-envelope" style="color: var(--secondary);"></i> ssvmorg@gmail.com</p>
+        <p class="footer-contact-item"><i class="fa-solid fa-id-card" style="color: var(--secondary);"></i> RBSE Affiliation Code: 1040470</p>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 श्री सरस्वती उच्च माध्यमिक विद्या मंदिर, मंडली। सर्वाधिकार सुरक्षित।</p>
+      <p>Designed with ❤️ by Antigravity | Hosted on GitHub</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Tab switching for Meal Menu Sets
+    function switchMenuTab(tabId, btn) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.classList.remove('active'));
+      
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      
+      document.getElementById(tabId).classList.add('active');
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>
