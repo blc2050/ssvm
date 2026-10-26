@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
@@ -42,4 +44,14 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add index.html *absent.xls
-          git diff --staged --quiet || (git commit -m "Auto-update daily attendance $(date +'%d-%m-%Y')" && git push)
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-update daily attendance $(date +'%d-%m-%Y')"
+            for attempt in 1 2 3; do
+              git pull --rebase -X theirs origin main && git push origin main && break || {
+                echo "Push attempt $attempt failed; retrying in 3s..."
+                sleep 3
+              }
+            done
+          else
+            echo "No changes to commit."
+          fi
