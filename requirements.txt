@@ -1,0 +1,5 @@
+playwright
+pywin32; sys_platform == 'win32'
+xlwt
+xlrd
+lxml
