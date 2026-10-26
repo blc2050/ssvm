@@ -1,0 +1,23 @@
+{
+  "erp_url": "https://online.myschoolerp.com/Login.aspx",
+  "erp_accounts": [
+    {
+      "name": "Hindi Medium (HM)",
+      "username": "MY1386_2_BABU",
+      "password": "Ssvm@2003"
+    },
+    {
+      "name": "English Medium (EM)",
+      "username": "MY1386_4_BABU",
+      "password": "Ssvm@2003"
+    }
+  ],
+  "export_directory": ".",
+  "logo_path": "logo.jpg",
+  "filename_suffix": "absent.xls",
+  "date_format": "%d%m%Y",
+  "github_owner": "blc2050",
+  "github_repo": "ssvm",
+  "github_branch": "main",
+  "github_token": ""
+}
