@@ -6,7 +6,16 @@ import logging
 import urllib.request
 import urllib.error
 import urllib.parse
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
+try:
+    from zoneinfo import ZoneInfo
+    IST = ZoneInfo("Asia/Kolkata")
+except Exception:
+    IST = timezone(timedelta(hours=5, minutes=30))
+
+def get_ist_now():
+    """Returns the current datetime in Indian Standard Time (IST)."""
+    return datetime.now(IST)
 import xlwt
 import xlrd
 try:
@@ -73,9 +82,15 @@ def load_config():
 
 def get_formatted_status_text(dt=None):
     if dt is None:
-        dt = datetime.now()
-    # Format: Day (DD Month Name YYYY) -> e.g. Thursday (06 August 2026)
+        dt = get_ist_now()
+    # Format: Day (DD Month Name YYYY) -> e.g. Monday (26 October 2026)
     return dt.strftime("%A (%d %B %Y)")
+
+def get_formatted_update_time(dt=None):
+    if dt is None:
+        dt = get_ist_now()
+    # Format: DD Month YYYY, hh:mm AM/PM -> e.g. 26 October 2026, 01:10 PM
+    return dt.strftime("%d %B %Y, %I:%M %p")
 
 def extract_rows_from_raw_excel(raw_file_path, status_text):
     """
@@ -238,7 +253,7 @@ def run_part_1_erp_extraction(config, p):
     """
     PART 1: Log in to HM & EM ERP accounts, scrape attendance, format & save excel file.
     """
-    today_str = datetime.now().strftime(config["date_format"])
+    today_str = get_ist_now().strftime(config["date_format"])
     output_filename = f"{today_str}{config['filename_suffix']}"
     output_filepath = os.path.join(config["export_directory"], output_filename)
     status_text = get_formatted_status_text()
@@ -525,9 +540,11 @@ def build_whatsapp_message(rec):
         "*श्री सरस्वती उच्च माध्यमिक विद्या मंदिर, मण्डली*"
     )
 
-def build_html(records, status_text):
+def build_html(records, status_text, update_time=None):
     """Builds a modern glassy mobile-first HTML page with 3 tabs:
     Board Class (10th & 12th), Local Class (all others), Attendance Report (class-wise counts)."""
+    if update_time is None:
+        update_time = get_formatted_update_time()
     all_groups = group_by_class_medium(records)
     board_groups = [(key, rows) for key, rows in all_groups if classify_class(key[0]) in ("10th", "12th")]
     local_groups = [(key, rows) for key, rows in all_groups if classify_class(key[0]) not in ("10th", "12th")]
@@ -755,7 +772,7 @@ footer {{ text-align: center; color: #94a3b8; font-size: 0.75rem; padding: 18px 
 {tab_defs[1][2]}
 {tab_defs[2][2]}
 </main>
-<footer>Updated daily by automated script</footer>
+<footer>Updated: {update_time}</footer>
 <script>
 document.querySelectorAll(".tab-btn").forEach(function(btn) {{
   btn.addEventListener("click", function() {{
@@ -836,7 +853,7 @@ def publish_to_github(config, html_doc):
         sha = existing["sha"]
 
     payload = {
-        "message": f"Update daily attendance {datetime.now().strftime('%d-%m-%Y %H:%M')}",
+        "message": f"Update daily attendance {get_ist_now().strftime('%d-%m-%Y %H:%M')}",
         "content": content_b64,
         "branch": branch,
     }
@@ -901,7 +918,9 @@ def run_part_2_github_publish(config, excel_path):
         logging.warning("No records found in excel file; still publishing page.")
 
     status_text = get_formatted_status_text()
-    html_doc = build_html(records, status_text)
+    update_time = get_formatted_update_time()
+    logging.info(f"Page timestamp: {update_time}")
+    html_doc = build_html(records, status_text, update_time)
     local_html = os.path.join(config["export_directory"], "index.html")
     with open(local_html, "w", encoding="utf-8") as f:
         f.write(html_doc)
