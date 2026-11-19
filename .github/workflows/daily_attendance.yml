@@ -2,8 +2,8 @@ name: Daily Attendance Tracker
 
 on:
   schedule:
-    # Runs daily at 11:30 AM IST (06:00 UTC)
-    - cron: '0 6 * * *'
+    # Runs daily at 11:15 AM IST (05:45 UTC)
+    - cron: '45 5 * * *'
   workflow_dispatch: # Allows manual trigger from GitHub web / app anytime
 
 permissions:
