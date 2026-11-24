@@ -271,128 +271,173 @@ def run_part_1_erp_extraction(config, p):
     except Exception:
         browser = p.chromium.launch(channel="msedge", headless=True)
 
-    for acc in config["erp_accounts"]:
-        acc_name = acc["name"]
-        username = acc["username"]
-        password = acc["password"]
-        
-        logging.info(f"--> Scraping account: {acc_name} ({username})")
-        page = browser.new_page()
-        page.on("dialog", lambda d: d.accept())
-
-        # Step 1: Login ERP
-        page.goto(config["erp_url"], timeout=60000, wait_until="domcontentloaded")
-        page.fill("input[name*='User']", username)
-        page.fill("input[type='password']", password)
-        page.click("input[type='submit']")
-        try:
-            page.wait_for_url(lambda u: "login.aspx" not in u.lower(), timeout=30000)
-        except Exception:
-            logging.warning(f"[{acc_name}] Page remained on Login.aspx after submit; waiting for networkidle.")
+    try:
+        for acc in config["erp_accounts"]:
+            acc_name = acc["name"]
+            username = acc["username"]
+            password = acc["password"]
+            
+            logging.info(f"--> Scraping account: {acc_name} ({username})")
+            page = None
             try:
-                page.wait_for_load_state("networkidle", timeout=15000)
-            except Exception:
-                pass
+                page = browser.new_page()
+                page.on("dialog", lambda d: d.accept())
 
-        # Step 2: Navigate to Continuous Attendance page (with retries & session recovery)
-        report_url = "https://online.myschoolerp.com/StudentAttendence/ContinuousAttendance.aspx"
-        for nav_attempt in range(1, 4):
-            try:
-                page.goto(report_url, wait_until="domcontentloaded", timeout=60000)
-                # If redirected back to Login.aspx, session was dropped; re-authenticate
-                if "login.aspx" in page.url.lower():
-                    logging.warning(f"[{acc_name}] Redirected to Login.aspx; re-authenticating...")
-                    page.fill("input[name*='User']", username)
-                    page.fill("input[type='password']", password)
-                    page.click("input[type='submit']")
+                # Step 1: Login ERP (with retries and no_wait_after to prevent timeout on slow ASP.NET redirect)
+                login_success = False
+                for login_attempt in range(1, 4):
                     try:
-                        page.wait_for_url(lambda u: "login.aspx" not in u.lower(), timeout=25000)
-                    except Exception:
-                        pass
-                    page.goto(report_url, wait_until="domcontentloaded", timeout=60000)
-
-                # Ensure #btnSearch is present on the page before proceeding
-                page.wait_for_selector("#btnSearch", timeout=20000, state="attached")
-                break
-            except Exception as nav_err:
-                logging.warning(f"[{acc_name}] Report page navigation attempt {nav_attempt} failed: {nav_err}")
-                if nav_attempt == 3:
-                    raise
-                page.wait_for_timeout(4000)
-        page.wait_for_timeout(1000)
-
-        # Step 3: Search & Export
-        for search_attempt in range(1, 4):
-            try:
-                if not page.query_selector("#btnSearch"):
-                    logging.warning(f"[{acc_name}] #btnSearch not present on {page.url}; re-navigating to report page...")
-                    page.goto(report_url, wait_until="domcontentloaded", timeout=45000)
-                    page.wait_for_selector("#btnSearch", timeout=20000, state="attached")
-                page.click("#btnSearch", timeout=30000)
-                page.wait_for_load_state("networkidle", timeout=30000)
-                break
-            except Exception as search_err:
-                logging.warning(f"[{acc_name}] Search click attempt {search_attempt} failed: {search_err}")
-                if search_attempt == 3:
-                    raise
-                page.wait_for_timeout(4000)
-        page.wait_for_timeout(2000)
-
-        temp_path = os.path.join(config["export_directory"], f"temp_{username}_{today_str}.xls")
-        temp_files.append(temp_path)
-
-        # Detect empty result grid (no absent students today)
-        grid_text = ""
-        try:
-            grid_text = page.inner_text("#grdSearch")
-        except Exception:
-            pass
-        if "No Record Found" in grid_text or not grid_text.strip():
-            logging.warning(f"[{acc_name}] No absent records found for today; skipping export.")
-            page.close()
-            account_counts[acc_name] = 0
-            continue
-
-        # Step 3b: Download with retries (handles transient failures / new-tab downloads)
-        download = None
-        for attempt in range(1, 4):
-            try:
-                with page.expect_download(timeout=25000) as download_info:
-                    page.click("#BtnExportToxls")
-                download = download_info.value
-                break
-            except Exception as e:
-                logging.warning(f"[{acc_name}] Download attempt {attempt} failed: {e}")
-                # Some ERP versions trigger the download from a new tab
-                for candidate in browser.contexts[-1].pages:
-                    if candidate != page:
+                        logging.info(f"[{acc_name}] Login attempt {login_attempt}...")
+                        page.goto(config["erp_url"], timeout=60000, wait_until="domcontentloaded")
+                        page.wait_for_selector("input[name*='User']", timeout=20000)
+                        page.fill("input[name*='User']", username)
+                        page.fill("input[type='password']", password)
+                        page.click("input[type='submit']", no_wait_after=True)
                         try:
-                            with candidate.expect_download(timeout=15000) as dl2:
-                                pass
-                            download = dl2.value
+                            page.wait_for_url(lambda u: "login.aspx" not in u.lower(), timeout=30000)
+                            login_success = True
                             break
                         except Exception:
-                            candidate.close()
-                if download:
-                    break
-                page.wait_for_timeout(3000)
-        if download is None:
-            raise RuntimeError(f"[{acc_name}] Could not download export after 3 attempts")
-        download.save_as(temp_path)
-        
-        page.close()
+                            logging.warning(f"[{acc_name}] Page remained on Login.aspx after submit; waiting for networkidle.")
+                            try:
+                                page.wait_for_load_state("networkidle", timeout=15000)
+                            except Exception:
+                                pass
+                            if "login.aspx" not in page.url.lower():
+                                login_success = True
+                                break
+                    except Exception as login_err:
+                        logging.warning(f"[{acc_name}] Login attempt {login_attempt} failed: {login_err}")
+                        page.wait_for_timeout(3000)
 
-        # Step 4: Extract records
-        acc_records = extract_rows_from_raw_excel(temp_path, status_text)
-        for rec in acc_records:
-            rec["Medium"] = acc_name
-        account_counts[acc_name] = len(acc_records)
-        logging.info(f"[{acc_name}] Extracted count: {len(acc_records)}")
+                if not login_success and "login.aspx" in page.url.lower():
+                    raise RuntimeError(f"[{acc_name}] Failed to log in after 3 attempts")
 
-        # Append EM below HM
-        combined_records.extend(acc_records)
+                # Step 2: Navigate to Continuous Attendance page (with retries & session recovery)
+                report_url = "https://online.myschoolerp.com/StudentAttendence/ContinuousAttendance.aspx"
+                for nav_attempt in range(1, 4):
+                    try:
+                        page.goto(report_url, wait_until="domcontentloaded", timeout=60000)
+                        # If redirected back to Login.aspx, session was dropped; re-authenticate
+                        if "login.aspx" in page.url.lower():
+                            logging.warning(f"[{acc_name}] Redirected to Login.aspx; re-authenticating...")
+                            page.fill("input[name*='User']", username)
+                            page.fill("input[type='password']", password)
+                            page.click("input[type='submit']", no_wait_after=True)
+                            try:
+                                page.wait_for_url(lambda u: "login.aspx" not in u.lower(), timeout=25000)
+                            except Exception:
+                                pass
+                            page.goto(report_url, wait_until="domcontentloaded", timeout=60000)
 
-    browser.close()
+                        # Ensure #btnSearch is present on the page before proceeding
+                        page.wait_for_selector("#btnSearch", timeout=20000, state="attached")
+                        break
+                    except Exception as nav_err:
+                        logging.warning(f"[{acc_name}] Report page navigation attempt {nav_attempt} failed: {nav_err}")
+                        if nav_attempt == 3:
+                            raise
+                        page.wait_for_timeout(4000)
+                page.wait_for_timeout(1000)
+
+                # Step 3: Search & Export
+                ist_today = get_ist_now().strftime("%m/%d/%Y")
+                date_range_str = f"{ist_today} - {ist_today}"
+                for search_attempt in range(1, 4):
+                    try:
+                        if not page.query_selector("#btnSearch"):
+                            logging.warning(f"[{acc_name}] #btnSearch not present on {page.url}; re-navigating to report page...")
+                            page.goto(report_url, wait_until="domcontentloaded", timeout=45000)
+                            page.wait_for_selector("#btnSearch", timeout=20000, state="attached")
+
+                        # Ensure date range is explicitly set to today
+                        try:
+                            if page.query_selector("#dtxtDate"):
+                                cur_val = page.eval_on_selector("#dtxtDate", "el => el.value")
+                                if not cur_val or cur_val.strip() != date_range_str:
+                                    page.fill("#dtxtDate", date_range_str)
+                        except Exception as d_err:
+                            logging.warning(f"[{acc_name}] Could not set #dtxtDate: {d_err}")
+
+                        page.click("#btnSearch", no_wait_after=True)
+                        try:
+                            page.wait_for_load_state("networkidle", timeout=20000)
+                        except Exception:
+                            pass
+                        page.wait_for_timeout(2000)
+                        break
+                    except Exception as search_err:
+                        logging.warning(f"[{acc_name}] Search click attempt {search_attempt} failed: {search_err}")
+                        if search_attempt == 3:
+                            raise
+                        page.wait_for_timeout(4000)
+
+                temp_path = os.path.join(config["export_directory"], f"temp_{username}_{today_str}.xls")
+                temp_files.append(temp_path)
+
+                # Detect empty result grid (no absent students today)
+                grid_text = ""
+                try:
+                    grid_text = page.inner_text("#grdSearch")
+                except Exception:
+                    pass
+                if "No Record Found" in grid_text or not grid_text.strip():
+                    logging.warning(f"[{acc_name}] No absent records found for today; skipping export.")
+                    account_counts[acc_name] = 0
+                    continue
+
+                # Step 3b: Download with retries (handles transient failures / new-tab downloads)
+                download = None
+                for attempt in range(1, 4):
+                    try:
+                        with page.expect_download(timeout=25000) as download_info:
+                            page.click("#BtnExportToxls")
+                        download = download_info.value
+                        break
+                    except Exception as e:
+                        logging.warning(f"[{acc_name}] Download attempt {attempt} failed: {e}")
+                        # Some ERP versions trigger the download from a new tab
+                        for candidate in browser.contexts[-1].pages:
+                            if candidate != page:
+                                try:
+                                    with candidate.expect_download(timeout=15000) as dl2:
+                                        pass
+                                    download = dl2.value
+                                    break
+                                except Exception:
+                                    candidate.close()
+                        if download:
+                            break
+                        page.wait_for_timeout(3000)
+                if download is None:
+                    raise RuntimeError(f"[{acc_name}] Could not download export after 3 attempts")
+                download.save_as(temp_path)
+
+                # Step 4: Extract records
+                acc_records = extract_rows_from_raw_excel(temp_path, status_text)
+                for rec in acc_records:
+                    rec["Medium"] = acc_name
+                account_counts[acc_name] = len(acc_records)
+                logging.info(f"[{acc_name}] Extracted count: {len(acc_records)}")
+
+                # Append EM below HM
+                combined_records.extend(acc_records)
+
+            except Exception as acc_err:
+                logging.error(f"[{acc_name}] Scraping failed with error: {acc_err}", exc_info=True)
+                if acc_name not in account_counts:
+                    account_counts[acc_name] = 0
+            finally:
+                if page and not page.is_closed():
+                    try:
+                        page.close()
+                    except Exception:
+                        pass
+    finally:
+        try:
+            browser.close()
+        except Exception:
+            pass
 
     # Step 5: Save final combined Excel file
     save_combined_excel(combined_records, output_filepath)
